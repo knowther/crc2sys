@@ -37,12 +37,20 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        ocorrenciaButtonBVD = new javax.swing.JButton();
+        pacienteButtonBVD = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        declaracaoButtonBVD = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        pacienteButton = new javax.swing.JButton();
+        ocorrenciaButton = new javax.swing.JButton();
+        declaracaoButton = new javax.swing.JButton();
+        parentPanel = new javax.swing.JPanel();
+        pacientePanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        ocorrenciaPanel = new javax.swing.JPanel();
+        declaracaoPanel = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -98,34 +106,34 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(258, 0, 362, 358);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/heart.png"))); // NOI18N
-        jButton1.setText("Ocorrências");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ocorrenciaButtonBVD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/heart.png"))); // NOI18N
+        ocorrenciaButtonBVD.setText("Ocorrências");
+        ocorrenciaButtonBVD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ocorrenciaButtonBVDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(10, 60, 120, 25);
+        jPanel1.add(ocorrenciaButtonBVD);
+        ocorrenciaButtonBVD.setBounds(10, 60, 130, 25);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/group.png"))); // NOI18N
-        jButton3.setText("Pacientes");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        pacienteButtonBVD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/group.png"))); // NOI18N
+        pacienteButtonBVD.setText("Pacientes");
+        pacienteButtonBVD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                pacienteButtonBVDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(10, 90, 120, 25);
+        jPanel1.add(pacienteButtonBVD);
+        pacienteButtonBVD.setBounds(10, 90, 130, 25);
 
         jLabel3.setText("Deseja Consultar:");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(10, 40, 100, 14);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/page_add.png"))); // NOI18N
-        jButton2.setText(" Declarações");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(10, 120, 120, 25);
+        declaracaoButtonBVD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/page_add.png"))); // NOI18N
+        declaracaoButtonBVD.setText(" Declarações");
+        jPanel1.add(declaracaoButtonBVD);
+        declaracaoButtonBVD.setBounds(10, 120, 130, 25);
 
         jInternalFrame1.getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 620, 350);
@@ -133,33 +141,114 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
         jDesktopPane1.add(jInternalFrame1);
         jInternalFrame1.setBounds(577, 264, 630, 383);
 
+        pacienteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/group.png"))); // NOI18N
+        pacienteButton.setText("Pacientes");
+        pacienteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pacienteButtonActionPerformed(evt);
+            }
+        });
+
+        ocorrenciaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/heart.png"))); // NOI18N
+        ocorrenciaButton.setText("Ocorrências");
+        ocorrenciaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ocorrenciaButtonActionPerformed(evt);
+            }
+        });
+
+        declaracaoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/page_add.png"))); // NOI18N
+        declaracaoButton.setText("Declarações");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1950, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pacienteButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ocorrenciaButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(declaracaoButton)
+                .addContainerGap(1601, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pacienteButton)
+                    .addComponent(ocorrenciaButton)
+                    .addComponent(declaracaoButton))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         jDesktopPane1.add(jPanel2);
         jPanel2.setBounds(0, 0, 1950, 160);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        parentPanel.setLayout(new java.awt.CardLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout pacientePanelLayout = new javax.swing.GroupLayout(pacientePanel);
+        pacientePanel.setLayout(pacientePanelLayout);
+        pacientePanelLayout.setHorizontalGroup(
+            pacientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pacientePanelLayout.createSequentialGroup()
+                .addGap(447, 447, 447)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1051, Short.MAX_VALUE))
+        );
+        pacientePanelLayout.setVerticalGroup(
+            pacientePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pacientePanelLayout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(293, Short.MAX_VALUE))
+        );
+
+        parentPanel.add(pacientePanel, "card4");
+
+        javax.swing.GroupLayout ocorrenciaPanelLayout = new javax.swing.GroupLayout(ocorrenciaPanel);
+        ocorrenciaPanel.setLayout(ocorrenciaPanelLayout);
+        ocorrenciaPanelLayout.setHorizontalGroup(
+            ocorrenciaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1950, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        ocorrenciaPanelLayout.setVerticalGroup(
+            ocorrenciaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 840, Short.MAX_VALUE)
         );
 
-        jDesktopPane1.add(jPanel3);
-        jPanel3.setBounds(0, 190, 1950, 840);
+        parentPanel.add(ocorrenciaPanel, "card3");
+
+        javax.swing.GroupLayout declaracaoPanelLayout = new javax.swing.GroupLayout(declaracaoPanel);
+        declaracaoPanel.setLayout(declaracaoPanelLayout);
+        declaracaoPanelLayout.setHorizontalGroup(
+            declaracaoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1950, Short.MAX_VALUE)
+        );
+        declaracaoPanelLayout.setVerticalGroup(
+            declaracaoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 840, Short.MAX_VALUE)
+        );
+
+        parentPanel.add(declaracaoPanel, "card2");
+
+        jDesktopPane1.add(parentPanel);
+        parentPanel.setBounds(0, 190, 1950, 840);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/user.png"))); // NOI18N
         jMenu3.setText("Usuários");
@@ -251,6 +340,7 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
         jMenu2.setText("Configurações");
         jMenuBar1.add(jMenu2);
 
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/disconnect.png"))); // NOI18N
         jMenu6.setText("Sair");
         jMenu6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,18 +370,22 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jInternalFrame1FocusGained
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void pacienteButtonBVDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteButtonBVDActionPerformed
         jInternalFrame1.dispose();
-        TelaPrincipalMDI1 telaPM1 = new TelaPrincipalMDI1();
-                telaPM1.setVisible(true);
-        dispose();        
-    }//GEN-LAST:event_jButton3ActionPerformed
+        parentPanel.removeAll();
+        parentPanel.add(pacientePanel);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        jInternalFrame1.dispose(); 
+    }//GEN-LAST:event_pacienteButtonBVDActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        TelaOcorrencia tela;
-        form.abrirFormulario(tela = new TelaOcorrencia(), jDesktopPane1);
+    private void ocorrenciaButtonBVDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ocorrenciaButtonBVDActionPerformed
+        parentPanel.removeAll();
+        parentPanel.add(ocorrenciaPanel);
+        parentPanel.repaint();
+        parentPanel.revalidate();
         jInternalFrame1.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ocorrenciaButtonBVDActionPerformed
 
     private void jMenu6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu6ActionPerformed
 
@@ -351,6 +445,22 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void pacienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteButtonActionPerformed
+       parentPanel.removeAll();
+        parentPanel.add(pacientePanel);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        jInternalFrame1.dispose();
+    }//GEN-LAST:event_pacienteButtonActionPerformed
+
+    private void ocorrenciaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ocorrenciaButtonActionPerformed
+       parentPanel.removeAll();
+        parentPanel.add(ocorrenciaPanel);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        jInternalFrame1.dispose();
+    }//GEN-LAST:event_ocorrenciaButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -389,9 +499,9 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton declaracaoButton;
+    private javax.swing.JButton declaracaoButtonBVD;
+    private javax.swing.JPanel declaracaoPanel;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
@@ -413,8 +523,16 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JButton ocorrenciaButton;
+    private javax.swing.JButton ocorrenciaButtonBVD;
+    private javax.swing.JPanel ocorrenciaPanel;
+    private javax.swing.JButton pacienteButton;
+    private javax.swing.JButton pacienteButtonBVD;
+    private javax.swing.JPanel pacientePanel;
+    private javax.swing.JPanel parentPanel;
     // End of variables declaration//GEN-END:variables
 }
