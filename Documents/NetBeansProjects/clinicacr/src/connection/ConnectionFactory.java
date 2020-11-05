@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,11 +22,13 @@ public class ConnectionFactory {
 
     
     
-    private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/dbclinica";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String URL = "jdbc:mysql://localhost:3306/dbclinica?useTimezone=true&serverTimezone=UTC";
     private static final String USER = "root";
-    private static final String PASS = "";
-    
+    private static final String PASS = "JohnnyWesley123";
+    public Connection con;
+    public Statement smt;
+    public ResultSet rs;
     public static Connection getConnection () {
         
         try {
@@ -70,6 +73,10 @@ public class ConnectionFactory {
         } catch (SQLException ex) {
             Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    void conexao() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
     

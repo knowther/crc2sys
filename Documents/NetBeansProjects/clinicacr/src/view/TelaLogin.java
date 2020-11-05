@@ -139,13 +139,13 @@ public class TelaLogin extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         
-        if(txtLogin.getText().equals("clinica2")&&txtSenha.getText().equals("clinica123")){
+        if(txtLogin.getText().equalsIgnoreCase("clinica2")&&txtSenha.getText().equals("clinica123")){
             JOptionPane.showMessageDialog(null, "Bem-Vindo!");
             TelaPrincipalMDI telaP = new TelaPrincipalMDI();
             telaP.setVisible(true);
             dispose();
         }else{
-            JOptionPane.showMessageDialog(null, "Acesso Negado!");
+            JOptionPane.showMessageDialog(null, "Acesso Negado! Usuário ou senha Incorretos.");
              }
     }//GEN-LAST:event_jButton1ActionPerformed
 

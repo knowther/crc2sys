@@ -5,6 +5,7 @@
  */
 package view;
 
+import connection.ConexaoBD;
 import javax.swing.JFrame;
 
 /**
@@ -12,7 +13,7 @@ import javax.swing.JFrame;
  * @author johnn
  */
 public class TelaPrincipalMDI extends javax.swing.JFrame {
-    
+    ConexaoBD conecta = new ConexaoBD();
     PosicaoFormulario form = new PosicaoFormulario();
 
     /**
@@ -20,6 +21,7 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
      */
     public TelaPrincipalMDI() {
         initComponents();
+        conecta.conexao();
         setExtendedState(MAXIMIZED_BOTH);
     }
 
@@ -342,6 +344,11 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
 
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/disconnect.png"))); // NOI18N
         jMenu6.setText("Sair");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu6MouseClicked(evt);
+            }
+        });
         jMenu6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu6ActionPerformed(evt);
@@ -388,9 +395,7 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
     }//GEN-LAST:event_ocorrenciaButtonBVDActionPerformed
 
     private void jMenu6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu6ActionPerformed
-
-        System.exit(0);
-        // TODO add your handling code here:
+   // TODO add your handling code here:
     }//GEN-LAST:event_jMenu6ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -460,6 +465,15 @@ public class TelaPrincipalMDI extends javax.swing.JFrame {
         parentPanel.revalidate();
         jInternalFrame1.dispose();
     }//GEN-LAST:event_ocorrenciaButtonActionPerformed
+
+    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+        // TODO add your handling code here:
+        conecta.desconecta();
+        dispose();
+        TelaLogin telaL = new TelaLogin();
+        telaL.setVisible(true);
+        
+    }//GEN-LAST:event_jMenu6MouseClicked
 
     /**
      * @param args the command line arguments
