@@ -217,9 +217,23 @@ public class TelaCadMed extends javax.swing.JInternalFrame {
        jTextFieldNome.setEnabled(false);
         jTextFieldCRM.setEnabled(false);
         jButtonSalvar.setEnabled(false);
+ 
     }//GEN-LAST:event_jButtonSalvarActionPerformed
       else{
-          
+      modMed.setIdmedicos((Integer.parseInt(jTextFieldId.getText())));
+      modMed.setNome(jTextFieldNome.getText());
+      modMed.setCRM(jTextFieldCRM.getText());
+      control.Editar(modMed);
+       jTextFieldNome.setText("");
+      jTextFieldCRM.setText("");
+      jTextFieldId.setText("");
+      jTextFieldPesquisa.setText("");
+       jTextFieldNome.setEnabled(false);
+        jTextFieldCRM.setEnabled(false);
+        jButtonSalvar.setEnabled(false);
+        jButtonEditar.setEnabled(false);
+        jButtonCancel.setEnabled(false);
+        jButtonNovo.setEnabled(true);
       }
       }
     
@@ -254,6 +268,7 @@ public class TelaCadMed extends javax.swing.JInternalFrame {
         jButtonNovo.setEnabled(true);
         jTextFieldNome.setText("");
         jTextFieldCRM.setText("");
+        jTextFieldId.setText("");
         jButtonEditar.setEnabled(false);
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
