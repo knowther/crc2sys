@@ -28,17 +28,27 @@ public class ConexaoBD {
         try {
             System.setProperty("jdbc.Drivers", driver);
             con=DriverManager.getConnection(caminho, usuario, senha);
-            JOptionPane.showMessageDialog(null, "Conexão Efeturada com Sucesso!!");
+            //JOptionPane.showMessageDialog(null, "Conexão Efeturada com Sucesso!!");
                     } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Conectar ao Banco de Dados:\n"+ex.getMessage());
         }
     }
+        public void execultaSql (String sql) {
+        try {
+            stm = con.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
+            rs = stm.executeQuery(sql);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro execultaSql:\n"+ex.getMessage());
+        }
+        }
+        
+        
     public void desconecta (){
         try {
             con.close();
-            JOptionPane.showMessageDialog(null, "Desconectado com Sucesso:");
+            //JOptionPane.showMessageDialog(null, "Desconectado com Sucesso:");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Fechar Conexão com Banco de Dados:\n"+ex.getMessage());
+           //JOptionPane.showMessageDialog(null, "Erro ao Fechar Conexão com Banco de Dados:\n"+ex.getMessage());
         }
     }
 }

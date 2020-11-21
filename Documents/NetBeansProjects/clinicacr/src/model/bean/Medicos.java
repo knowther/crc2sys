@@ -12,6 +12,20 @@ package model.bean;
 public class Medicos {
 
     /**
+     * @return the pesquisa
+     */
+    public String getPesquisa() {
+        return pesquisa;
+    }
+
+    /**
+     * @param pesquisa the pesquisa to set
+     */
+    public void setPesquisa(String pesquisa) {
+        this.pesquisa = pesquisa;
+    }
+
+    /**
      * @return the idmedicos
      */
     public int getIdmedicos() {
@@ -130,5 +144,6 @@ public class Medicos {
     private int pacientes_2Turno;
     private int pacientes_3Turno;
     private int pacientes_4Turno;
+    private String pesquisa;
     
 }
